@@ -280,9 +280,13 @@
 <footer>&#169; My Henna Atelier &#8212; All Rights Reserved</footer>
 
 <script>
-  function generateSlots(bookedTimes) {
+  //function generateSlots(bookedTimes) {
     var slots = [];
-    for (var h = 10; h <= 23; h++) {
+    for (var h = 10; h <= 23; h++)// {
+     function generateSlots(bookedTimes, startHour) {
+    var slots = [];
+    startHour = startHour || 10;
+    for (var h = startHour; h <= 23; h++) {
       var suffix  = h < 12 ? 'AM' : 'PM';
       var display = h <= 12 ? h : h - 12;
       var label   = display + ':00 ' + suffix;
@@ -299,7 +303,7 @@
   ];
 
   var SCHEDULE = {
-    mon16: generateSlots(['7:00 PM','8:00 PM','9:00 PM','10:00 PM','11:00 PM']),
+    mon16: generateSlots(['7:00 PM','8:00 PM','9:00 PM','10:00 PM','11:00 PM'], 8),
     tue17: generateSlots(['7:00 PM','8:00 PM','9:00 PM','10:00 PM']),
     wed18: generateSlots(['11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','7:00 PM','8:00 PM','9:00 PM','10:00 PM','11:00 PM']),
     thu19: generateSlots(['2:00 PM','9:00 PM'])
