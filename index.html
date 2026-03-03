@@ -280,10 +280,8 @@
 <footer>&#169; My Henna Atelier &#8212; All Rights Reserved</footer>
 
 <script>
-  //function generateSlots(bookedTimes) {
-    var slots = [];
-    for (var h = 10; h <= 23; h++)// {
-     function generateSlots(bookedTimes, startHour) {
+ 
+    function generateSlots(bookedTimes, startHour) {
     var slots = [];
     startHour = startHour || 10;
     for (var h = startHour; h <= 23; h++) {
